@@ -2,7 +2,11 @@
 
 # dependencies
 /node_modules
+/references
+/downloads
 /.pnp
+**/OLD
+**/old
 .pnp.js
 
 # testing
