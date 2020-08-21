@@ -10,7 +10,7 @@ const Pagination = () => {
     <nav>
       <ul className="pagination">
         {pages.map(page => (
-          <li className="page-item">
+          <li key={page} className="page-item">
             <a className="page-link">{page}</a>
           </li>
         ))}
