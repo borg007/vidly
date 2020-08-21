@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import _ from "lodash"; // nested properties e.g genre.name
 
 class TableBody extends Component {
   render() {
@@ -9,7 +10,7 @@ class TableBody extends Component {
         {data.map(item => (
           <tr>
             {columns.map(column => (
-              <td></td>
+              <td>{_.get(item, column.path)}</td>
             ))}
           </tr>
         ))}
