@@ -22,7 +22,9 @@ class Movies extends Component {
     movies[index].liked = !movies[index].liked;
     this.setState({ movies });
   };
-  handlePageChange = page => {};
+  handlePageChange = page => {
+    this.setState({ currentPage: page });
+  };
 
   render() {
     const { length: count } = this.state.movies;
