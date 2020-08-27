@@ -4,6 +4,8 @@
 /node_modules
 /references
 /downloads
+**/downloads
+**/DOWNLOADS
 /.pnp
 **/OLD
 **/old
