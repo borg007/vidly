@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 //Control Component - received data and send via props: no state
 //converted to a stateless function
