@@ -16,9 +16,17 @@ class LoginForm extends Component {
     const options = { abortEarly: false };
     const { error } = Joi.validate(this.state.account, this.schema, options);
     if (!error) return null;
+
     const errors = {};
     for (let item of error.details) errors[item.path[0]] = item.message;
     return errors;
+  };
+
+  validateProperty = ({ name, value }) => {
+    const obj = { [name]: value };
+    const schema = { [name]: this.schema[name] };
+    const { error } = Joi.validate(obj, schema);
+    return error ? error.details[0].message : null;
   };
 
   handleSubmit = e => {
@@ -28,14 +36,6 @@ class LoginForm extends Component {
     this.setState({ errors: errors || {} });
     if (errors) return;
     // Call the server
-  };
-
-  validateProperty = ({ name, value }) => {
-    const obj = { [name]: value };
-    const schema = { [name]: this.schema[name] };
-    const { error } = Joi.validate(obj, schema);
-    if (error) return null;
-    return error.details[0].message;
   };
 
   handleChange = ({ currentTarget: input }) => {
