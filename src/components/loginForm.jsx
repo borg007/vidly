@@ -23,19 +23,6 @@ class LoginForm extends Component {
         <h1>Login</h1>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
-            <label htmlFor="username">Username</label>
-            <input
-              value={account.username}
-              onChange={this.handleChange}
-              id="username"
-              name="username"
-              type="text"
-              maxLength="20"
-              className="form-control"
-            />
-          </div>
-
-          <div className="form-group">
             <label htmlFor="password">Password</label>
             <input
               value={account.password}
