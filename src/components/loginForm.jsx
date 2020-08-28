@@ -1,11 +1,7 @@
 import React, { Component } from "react";
 
 class LoginForm extends Component {
-  username = React.createRef(); // only use refs to access the react dom if you have to
-
-  /* componentDidMount() {
-    this.username.current.focus(); // causes username input field to appear active or focused
-  }*/
+  state = { account: { username: "", password: "" } };
 
   handleSubmit = e => {
     e.preventDefault();
