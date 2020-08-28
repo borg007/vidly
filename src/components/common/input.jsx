@@ -1,14 +1,14 @@
 import React from "react";
 
-const Input = props => {
+const Input = ({ name, label, value, onChange }) => {
   return (
     <div className="form-group">
-      <label htmlFor={props.name}>Username</label>
+      <label htmlFor={name}>{label}</label>
       <input
-        value={account.username}
-        onChange={this.handleChange}
-        id={props.name}
-        name={props.name}
+        value={value}
+        onChange={onChange}
+        id={name}
+        name={name}
         type="text"
         maxLength="20"
         className="form-control"
