@@ -2,10 +2,20 @@ import React, { Component } from "react";
 import Input from "./common/input";
 
 class LoginForm extends Component {
-  state = { account: { username: "", password: "" } };
+  state = {
+    account: { username: "", password: "" },
+    errors: {}
+  };
+  validate = () => {
+    return { username: "Username is required." };
+  };
 
   handleSubmit = e => {
     e.preventDefault();
+
+    const errors = this.validate();
+    this.setState({ errors });
+    if (errors) return;
     // Call the server
 
     const username = this.username.current.value;
