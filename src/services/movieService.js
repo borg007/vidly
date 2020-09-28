@@ -3,6 +3,11 @@ import { apiUrl } from "./config.json";
 
 const apiEndpoint = apiUrl + "/movies";
 
+function getMovieUrl(id) {
+  // return apiEndpoint+"/"+id;
+  return `${apiEndpoint}/${id}`; // template literal dynamic
+}
+
 export function getMovies() {
   return http.get(apiEndpoint);
 }
